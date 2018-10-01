@@ -7,10 +7,11 @@ osio {
 
   ci {
 
+    echo "Test CI"
     def app = processTemplate(params: [
           release_version: "1.0.${env.BUILD_NUMBER}"
     ])
-
+   
     build resources: app, commands: """
           npm install
           npm test
